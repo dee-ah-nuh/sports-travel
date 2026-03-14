@@ -90,7 +90,7 @@ function MapboxMap({ destinations, onEventClick }: Props) {
 
       // Build marker element
       const el = document.createElement('div');
-      el.className = styles.marker;
+      el.className = styles.marker ?? '';
       el.style.cssText = `
         background: ${hasEvents ? color : '#1e2235'};
         border: 2px solid ${hasEvents ? color : '#3a3f5a'};
@@ -130,7 +130,7 @@ function MapboxMap({ destinations, onEventClick }: Props) {
       const popup = new mapboxgl.Popup({
         offset: 20,
         closeButton: false,
-        className: styles.mapboxPopup,
+        ...(styles.mapboxPopup ? { className: styles.mapboxPopup } : {}),
         maxWidth: '240px',
       }).setHTML(popupHtml);
 
