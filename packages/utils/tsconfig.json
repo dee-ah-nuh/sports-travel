@@ -1,0 +1,10 @@
+{
+  "extends": "@sports-travel/config/tsconfig",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist", "node_modules"]
+}

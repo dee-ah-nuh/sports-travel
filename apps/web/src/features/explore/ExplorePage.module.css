@@ -1,0 +1,36 @@
+.page { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+
+.header {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  flex-shrink: 0;
+  z-index: 100;
+}
+
+.headerInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.logoEmoji { font-size: 24px; }
+.logoText { font-weight: 700; font-size: 18px; color: var(--text-primary); white-space: nowrap; }
+
+.viewToggle { display: flex; gap: 4px; margin-left: auto; }
+.toggleBtn {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.15s;
+}
+.toggleBtn:hover { background: var(--bg-card); color: var(--text-primary); }
+.toggleBtn.active { background: var(--accent-subtle); color: var(--accent); }
+
+.main { flex: 1; overflow: auto; }

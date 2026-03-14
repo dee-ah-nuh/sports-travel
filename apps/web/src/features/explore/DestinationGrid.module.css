@@ -1,0 +1,16 @@
+.container { padding: 24px; max-width: 1400px; margin: 0 auto; }
+.count { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.empty { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px; gap: 8px; }
+.emptyIcon { font-size: 48px; }
+.empty p { color: var(--text-secondary); font-size: 16px; }
+.hint { font-size: 14px; color: var(--text-muted) !important; }
+
+@media (max-width: 640px) {
+  .container { padding: 16px; }
+  .grid { grid-template-columns: 1fr; }
+}

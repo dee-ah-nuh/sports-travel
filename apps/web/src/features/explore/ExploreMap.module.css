@@ -1,0 +1,35 @@
+.mapContainer { height: 100%; min-height: 500px; position: relative; }
+
+/* Real Mapbox canvas */
+.mapCanvas { width: 100%; height: 100%; min-height: 500px; }
+.mapPlaceholder {
+  height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at center, #1a2040 0%, #0f1117 70%);
+  gap: 24px; padding: 40px; position: relative; overflow: hidden;
+}
+.mapBg { font-size: 200px; opacity: 0.05; position: absolute; }
+.mapMessage { text-align: center; z-index: 1; }
+.mapMessage h3 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+.mapMessage p { color: var(--text-secondary); font-size: 15px; margin-bottom: 4px; }
+.mapMessage code { background: var(--bg-card); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: var(--accent); }
+.hint { font-size: 13px; color: var(--text-muted) !important; }
+.destPins { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; z-index: 1; max-width: 700px; }
+.pin {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 6px 14px; display: flex; flex-direction: column; align-items: center;
+  cursor: pointer; transition: all 0.15s;
+}
+.pin:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+/* Mapbox popup chrome overrides */
+:global(.mapboxgl-popup-content) {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6) !important;
+}
+:global(.mapboxgl-popup-tip) { display: none !important; }
+.pin.pinEvent { border-color: var(--accent); background: var(--accent-subtle); }
+.pinCity { font-size: 13px; font-weight: 600; }
+.pinPrice { font-size: 12px; color: var(--text-secondary); }
+.pinBadge { font-size: 11px; color: var(--accent); margin-top: 2px; }

@@ -1,0 +1,48 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.card:hover { border-color: var(--border); background: var(--bg-card-hover); transform: translateY(-2px); box-shadow: var(--shadow-card); }
+.card.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--shadow-card); }
+.card.hasEvents { border-color: #2a3050; }
+
+.cardHeader { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.location { display: flex; align-items: center; gap: 10px; }
+.flag { font-size: 28px; }
+.city { font-size: 18px; font-weight: 600; color: var(--text-primary); }
+.country { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+
+.priceBlock { text-align: right; }
+.priceLabel { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.price { font-size: 22px; font-weight: 700; color: var(--text-primary); }
+.priceSub { font-size: 11px; color: var(--text-muted); }
+
+.flightInfo { display: flex; align-items: center; gap: 6px; margin-bottom: 14px; }
+.badge { font-size: 12px; background: var(--bg-surface); border-radius: 4px; padding: 2px 6px; color: var(--text-secondary); }
+.dot { color: var(--text-muted); }
+.duration { font-size: 13px; color: var(--text-secondary); }
+.airline { font-size: 13px; color: var(--text-muted); }
+
+.eventsSection { border-top: 1px solid var(--border-subtle); padding-top: 12px; }
+.eventsLabel { font-size: 12px; color: var(--accent); font-weight: 500; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.eventsList { display: flex; flex-direction: column; gap: 6px; }
+
+.eventChip {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px; border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  text-align: left; width: 100%;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.eventChip:hover { filter: brightness(1.3); transform: translateX(2px); }
+.eventEmoji { font-size: 16px; flex-shrink: 0; }
+.eventName { font-size: 13px; color: var(--text-primary); font-weight: 500; flex: 1; line-height: 1.3; }
+.eventDate { font-size: 12px; color: var(--text-secondary); flex-shrink: 0; }
+.eventPrice { font-size: 12px; color: var(--text-secondary); flex-shrink: 0; white-space: nowrap; }
+
+.noEvents { font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 12px; }

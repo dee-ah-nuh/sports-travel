@@ -1,0 +1,220 @@
+// This is your Prisma schema file.
+// Learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Users ───────────────────────────────────────────────────────────────────
+
+model User {
+  id          String  @id @default(uuid())
+  supabaseId  String  @unique @map("supabase_id")
+  email       String  @unique
+  displayName String? @map("display_name")
+  avatarUrl   String? @map("avatar_url")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  preferences UserPreference?
+  itineraries Itinerary[]
+  searchLogs  SearchLog[]
+
+  @@map("users")
+}
+
+model UserPreference {
+  id     String @id @default(uuid())
+  userId String @unique @map("user_id")
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  homeCityIata     String?  @map("home_city_iata")
+  defaultCurrency  String   @default("USD") @map("default_currency")
+  budgetMax        Decimal? @map("budget_max") @db.Decimal(10, 2)
+  seatClass        SeatClass @default(ECONOMY) @map("seat_class")
+  sportsInterests  String[] @map("sports_interests")
+  comfortTolerance Int      @default(3) @map("comfort_tolerance")
+  maxLayovers      Int      @default(2) @map("max_layovers")
+
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("user_preferences")
+}
+
+enum SeatClass {
+  ECONOMY
+  PREMIUM_ECONOMY
+  BUSINESS
+  FIRST
+}
+
+// ─── Geography ────────────────────────────────────────────────────────────────
+
+model Airport {
+  iataCode    String  @id @map("iata_code")
+  icaoCode    String? @unique @map("icao_code")
+  name        String
+  cityName    String  @map("city_name")
+  countryCode String  @map("country_code")
+  latitude    Decimal @db.Decimal(9, 6)
+  longitude   Decimal @db.Decimal(9, 6)
+  timezone    String
+
+  venues Venue[]
+
+  @@map("airports")
+}
+
+model Venue {
+  id          String  @id @default(uuid())
+  name        String
+  cityName    String  @map("city_name")
+  countryCode String  @map("country_code")
+  latitude    Decimal @db.Decimal(9, 6)
+  longitude   Decimal @db.Decimal(9, 6)
+  capacity    Int?
+  nearestIata String? @map("nearest_iata")
+  airport     Airport? @relation(fields: [nearestIata], references: [iataCode])
+
+  events Event[]
+
+  @@map("venues")
+}
+
+// ─── Events ──────────────────────────────────────────────────────────────────
+
+model Event {
+  id             String  @id @default(uuid())
+  externalId     String? @map("external_id")
+  externalSource String? @map("external_source")
+  name           String
+  sport          String
+  league         String?
+  homeTeam       String? @map("home_team")
+  awayTeam       String? @map("away_team")
+
+  startTime DateTime @map("start_time")
+  endTime   DateTime? @map("end_time")
+
+  venueId String @map("venue_id")
+  venue   Venue  @relation(fields: [venueId], references: [id])
+
+  ticketUrl      String?  @map("ticket_url")
+  minTicketPrice Decimal? @map("min_ticket_price") @db.Decimal(10, 2)
+  maxTicketPrice Decimal? @map("max_ticket_price") @db.Decimal(10, 2)
+  currency       String?  @default("USD")
+  popularity     Int      @default(0)
+
+  fetchedAt DateTime  @default(now()) @map("fetched_at")
+  expiresAt DateTime  @map("expires_at")
+
+  itineraryLegs ItineraryLeg[]
+
+  @@unique([externalId, externalSource])
+  @@index([startTime])
+  @@index([sport])
+  @@index([venueId])
+  @@map("events")
+}
+
+// ─── Itineraries ─────────────────────────────────────────────────────────────
+
+model Itinerary {
+  id        String          @id @default(uuid())
+  userId    String          @map("user_id")
+  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String?
+  status    ItineraryStatus @default(DRAFT)
+  totalCost Decimal?        @map("total_cost") @db.Decimal(10, 2)
+  currency  String          @default("USD")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  legs ItineraryLeg[]
+
+  @@index([userId])
+  @@map("itineraries")
+}
+
+enum ItineraryStatus {
+  DRAFT
+  SAVED
+  BOOKED
+}
+
+model ItineraryLeg {
+  id          String    @id @default(uuid())
+  itineraryId String    @map("itinerary_id")
+  itinerary   Itinerary @relation(fields: [itineraryId], references: [id], onDelete: Cascade)
+  legOrder    Int       @map("leg_order")
+  type        LegType
+
+  originIata      String? @map("origin_iata")
+  destinationIata String? @map("destination_iata")
+  carrier         String?
+  flightNumber    String? @map("flight_number")
+  departureTime   DateTime? @map("departure_time")
+  arrivalTime     DateTime? @map("arrival_time")
+  costEstimate    Decimal?  @map("cost_estimate") @db.Decimal(10, 2)
+  currency        String?
+  bookingUrl      String?   @map("booking_url")
+
+  eventId String? @map("event_id")
+  event   Event?  @relation(fields: [eventId], references: [id])
+
+  metadata Json?
+
+  @@index([itineraryId])
+  @@map("itinerary_legs")
+}
+
+enum LegType {
+  FLIGHT
+  TRAIN
+  HOTEL
+  EVENT
+  TRANSFER
+}
+
+// ─── Caching ─────────────────────────────────────────────────────────────────
+
+model ItineraryCache {
+  id               String   @id @default(uuid())
+  cacheKey         String   @unique @map("cache_key")
+  origin           String
+  destination      String
+  departureDateMin DateTime @map("departure_date_min")
+  departureDateMax DateTime @map("departure_date_max")
+  payload          Json
+  createdAt        DateTime @default(now()) @map("created_at")
+  expiresAt        DateTime @map("expires_at")
+
+  @@index([cacheKey])
+  @@index([expiresAt])
+  @@map("itinerary_cache")
+}
+
+model SearchLog {
+  id          String   @id @default(uuid())
+  userId      String?  @map("user_id")
+  user        User?    @relation(fields: [userId], references: [id])
+  sessionId   String?  @map("session_id")
+  origin      String?
+  sport       String?
+  dateFrom    DateTime? @map("date_from")
+  dateTo      DateTime? @map("date_to")
+  budget      Decimal?  @db.Decimal(10, 2)
+  resultCount Int?      @map("result_count")
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@index([createdAt])
+  @@map("search_logs")
+}

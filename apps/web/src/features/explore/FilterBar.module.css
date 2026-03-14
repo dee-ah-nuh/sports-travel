@@ -1,0 +1,38 @@
+.bar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 52px;
+  overflow-x: auto;
+}
+.chips { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+.chip {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.chip:hover { border-color: var(--accent); color: var(--text-primary); }
+.chip.active { border-color: var(--accent); color: var(--accent); background: var(--accent-subtle); }
+.controls { display: flex; gap: 20px; align-items: center; margin-left: auto; flex-shrink: 0; }
+.control { display: flex; align-items: center; gap: 8px; }
+.label { font-size: 13px; color: var(--text-secondary); white-space: nowrap; }
+.label strong { color: var(--text-primary); }
+.select {
+  background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary);
+  border-radius: var(--radius-sm); padding: 4px 8px; font-size: 13px; font-family: inherit;
+}
+.select option { background: var(--bg-card); }
+.slider { accent-color: var(--accent); width: 100px; cursor: pointer; }

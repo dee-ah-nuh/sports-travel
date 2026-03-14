@@ -1,0 +1,62 @@
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+
+.header {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  padding: 24px;
+  position: relative;
+}
+.backBtn {
+  font-size: 14px; color: var(--text-secondary); background: none; border: none;
+  cursor: pointer; margin-bottom: 16px; padding: 0;
+}
+.backBtn:hover { color: var(--text-primary); }
+.headerInner { margin-bottom: 0; }
+
+.eventBadge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; border-radius: 20px; border: 1px solid; margin-bottom: 10px;
+}
+.sportEmoji { font-size: 16px; }
+.sportName { font-size: 13px; font-weight: 600; text-transform: capitalize; }
+.eventName { font-size: 26px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
+.eventMeta { display: flex; gap: 8px; font-size: 14px; color: var(--text-secondary); margin-bottom: 6px; flex-wrap: wrap; }
+.matchup { font-size: 15px; color: var(--text-secondary); font-weight: 500; }
+
+.ticketBox {
+  position: absolute; top: 24px; right: 24px;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 16px 20px; text-align: center; min-width: 160px;
+}
+.ticketLabel { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.ticketPrice { font-size: 28px; font-weight: 700; }
+.ticketRange { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+.ticketBtn {
+  display: block; width: 100%; padding: 8px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 600; color: white; text-align: center;
+  transition: filter 0.15s;
+}
+.ticketBtn:hover { filter: brightness(1.2); }
+
+.body { padding: 32px 24px; max-width: 900px; margin: 0 auto; width: 100%; }
+.sectionTitle { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+.sectionSub { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; }
+
+.optionsTabs { display: flex; gap: 12px; margin-bottom: 24px; }
+.tab {
+  flex: 1; padding: 14px; border-radius: var(--radius-md);
+  background: var(--bg-card); border: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  transition: all 0.15s;
+}
+.tab:hover { border-color: var(--accent); }
+.tab.tabActive { border-color: var(--accent); background: var(--accent-subtle); }
+.tabLabel { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+.tabPrice { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+
+@media (max-width: 640px) {
+  .ticketBox { position: static; margin-top: 20px; text-align: left; }
+  .optionsTabs { flex-direction: column; }
+}
+
+.error { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; gap: 16px; }

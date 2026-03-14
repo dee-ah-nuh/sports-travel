@@ -1,0 +1,25 @@
+{
+  "name": "@sports-travel/utils",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Pure shared utilities for date, geo, and currency handling",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "@sports-travel/config": "workspace:*"
+  }
+}
