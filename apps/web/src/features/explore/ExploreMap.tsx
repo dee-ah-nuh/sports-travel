@@ -5,6 +5,14 @@ import styles from './ExploreMap.module.css';
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
 
+const ORIGIN_COORDS: Record<string, { lat: number; lng: number }> = {
+  ORD: { lat: 41.9742, lng: -87.9073 },
+  JFK: { lat: 40.6413, lng: -73.7781 },
+  LAX: { lat: 33.9425, lng: -118.4081 },
+  LHR: { lat: 51.477928, lng: -0.461941 },
+  CDG: { lat: 49.009724, lng: 2.547778 },
+};
+
 interface Event { id: string; name: string; sport: string; }
 interface Destination {
   iataCode: string; city: string; country: string; latitude: number; longitude: number;
@@ -13,6 +21,8 @@ interface Destination {
 interface Props {
   destinations: Destination[];
   onEventClick: (eventId: string) => void;
+  selectedDest?: Destination | null;
+  origin?: string;
 }
 
 // ── Fallback when no token is set ─────────────────────────────────────────────
@@ -45,10 +55,11 @@ function MapPlaceholder({ destinations, onEventClick }: Props) {
 }
 
 // ── Real Mapbox map ───────────────────────────────────────────────────────────
-function MapboxMap({ destinations, onEventClick }: Props) {
+function MapboxMap({ destinations, onEventClick, selectedDest, origin }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const markersRef = useRef<mapboxgl.Marker[]>([]);
+  const planeMarkerRef = useRef<mapboxgl.Marker | null>(null);
   const [ready, setReady] = useState(false);
 
   // Init map once
@@ -90,7 +101,6 @@ function MapboxMap({ destinations, onEventClick }: Props) {
 
       // Build marker element
       const el = document.createElement('div');
-      el.className = styles.marker ?? '';
       el.style.cssText = `
         background: ${hasEvents ? color : '#1e2235'};
         border: 2px solid ${hasEvents ? color : '#3a3f5a'};
@@ -99,8 +109,9 @@ function MapboxMap({ destinations, onEventClick }: Props) {
         display: flex; align-items: center; gap: 5px;
         cursor: pointer;
         box-shadow: 0 2px 12px rgba(0,0,0,0.5);
-        transition: transform 0.15s;
+        transition: box-shadow 0.15s, border-color 0.15s;
         white-space: nowrap;
+        will-change: box-shadow;
       `;
 
       const sportIcon = topEvent ? SPORT_EMOJI[topEvent.sport] ?? '🏆' : '';
@@ -109,10 +120,17 @@ function MapboxMap({ destinations, onEventClick }: Props) {
         <span style="font-size:13px;font-weight:700;color:${hasEvents ? '#fff' : '#8b91b0'}">$${dest.price}</span>
       `;
 
-      el.addEventListener('mouseenter', () => { el.style.transform = 'scale(1.1)'; });
-      el.addEventListener('mouseleave', () => { el.style.transform = 'scale(1)'; });
+      // Hover: glow effect only — no position movement
+      el.addEventListener('mouseenter', () => {
+        el.style.boxShadow = `0 0 0 3px ${color}55, 0 4px 20px rgba(0,0,0,0.7)`;
+        el.style.borderColor = hasEvents ? '#fff' : color;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.boxShadow = '0 2px 12px rgba(0,0,0,0.5)';
+        el.style.borderColor = hasEvents ? color : '#3a3f5a';
+      });
 
-      // Popup
+      // Popup (opens on click via mapboxgl marker default behaviour)
       const popupHtml = `
         <div style="font-family:system-ui;background:#1e2235;border-radius:10px;padding:12px;min-width:180px;">
           <div style="font-size:15px;font-weight:700;color:#f0f2ff;margin-bottom:4px;">${dest.city}</div>
@@ -130,12 +148,10 @@ function MapboxMap({ destinations, onEventClick }: Props) {
       const popup = new mapboxgl.Popup({
         offset: 20,
         closeButton: false,
-        ...(styles.mapboxPopup ? { className: styles.mapboxPopup } : {}),
         maxWidth: '240px',
       }).setHTML(popupHtml);
 
       popup.on('open', () => {
-        // Wire up event click inside popup
         setTimeout(() => {
           document.querySelectorAll('[data-event-id]').forEach((el) => {
             el.addEventListener('click', () => {
@@ -154,6 +170,96 @@ function MapboxMap({ destinations, onEventClick }: Props) {
       markersRef.current.push(marker);
     });
   }, [destinations, ready, onEventClick]);
+
+  // Draw flight arc when a destination is selected
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
+
+    const removeArc = () => {
+      try {
+        if (map.getLayer('explore-route-glow')) map.removeLayer('explore-route-glow');
+        if (map.getLayer('explore-route-line')) map.removeLayer('explore-route-line');
+        if (map.getSource('explore-route')) map.removeSource('explore-route');
+      } catch (_) { /* map may have been removed */ }
+      if (planeMarkerRef.current) {
+        planeMarkerRef.current.remove();
+        planeMarkerRef.current = null;
+      }
+    };
+
+    if (!selectedDest) {
+      removeArc();
+      return;
+    }
+
+    const originIata = (origin ?? 'ORD – Chicago').split('–')[0].trim();
+    const originCoords = ORIGIN_COORDS[originIata] ?? ORIGIN_COORDS['ORD']!;
+
+    const steps = 60;
+    const arcCoords: [number, number][] = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = i / steps;
+      const lng = originCoords.lng + (selectedDest.longitude - originCoords.lng) * t;
+      const lat = originCoords.lat + (selectedDest.latitude - originCoords.lat) * t;
+      const arc = Math.sin(Math.PI * t) * 8;
+      arcCoords.push([lng, lat + arc]);
+    }
+
+    removeArc();
+
+    map.addSource('explore-route', {
+      type: 'geojson',
+      data: {
+        type: 'Feature',
+        properties: {},
+        geometry: { type: 'LineString', coordinates: arcCoords },
+      },
+    });
+
+    map.addLayer({
+      id: 'explore-route-glow',
+      type: 'line',
+      source: 'explore-route',
+      layout: { 'line-join': 'round', 'line-cap': 'round' },
+      paint: { 'line-color': '#57ecb2', 'line-width': 4, 'line-opacity': 0.3, 'line-blur': 6 },
+    });
+
+    map.addLayer({
+      id: 'explore-route-line',
+      type: 'line',
+      source: 'explore-route',
+      layout: { 'line-join': 'round', 'line-cap': 'round' },
+      paint: { 'line-color': '#57ecb2', 'line-width': 2, 'line-opacity': 0.9, 'line-dasharray': [2, 1.5] },
+    });
+
+    // Plane icon at arc midpoint
+    const planeEl = document.createElement('div');
+    // Calculate bearing for rotation
+    const dx = selectedDest.longitude - originCoords.lng;
+    const dy = selectedDest.latitude - originCoords.lat;
+    const bearing = Math.atan2(dx, dy) * (180 / Math.PI);
+    planeEl.style.cssText = 'font-size:20px;filter:drop-shadow(0 0 6px #57ecb2);pointer-events:none;';
+    planeEl.textContent = '✈';
+    const midCoord = arcCoords[Math.floor(steps / 2)];
+    if (midCoord) {
+      planeMarkerRef.current = new mapboxgl.Marker({ element: planeEl, rotation: bearing - 90 })
+        .setLngLat(midCoord)
+        .addTo(map);
+    }
+
+    // Fit map to show the full route
+    const minLng = Math.min(originCoords.lng, selectedDest.longitude);
+    const maxLng = Math.max(originCoords.lng, selectedDest.longitude);
+    const minLat = Math.min(originCoords.lat, selectedDest.latitude);
+    const maxLat = Math.max(originCoords.lat, selectedDest.latitude);
+    map.fitBounds(
+      [[minLng - 8, minLat - 5], [maxLng + 8, maxLat + 10]],
+      { padding: 60, duration: 900, maxZoom: 5 },
+    );
+
+    return removeArc;
+  }, [selectedDest, ready, origin]);
 
   return <div ref={containerRef} className={styles.mapCanvas} />;
 }

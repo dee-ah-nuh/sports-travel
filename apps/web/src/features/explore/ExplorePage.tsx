@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router';
 import { SearchBar } from './SearchBar.js';
 import { ExploreMap } from './ExploreMap.js';
@@ -9,6 +9,9 @@ import styles from './ExplorePage.module.css';
 
 type SortMode = 'price' | 'events' | 'duration';
 
+const DEFAULT_PANEL_HEIGHT = 300;
+const MIN_PANEL_HEIGHT = 72;
+
 export function ExplorePage() {
   const navigate = useNavigate();
   const [selectedSport, setSelectedSport] = useState<string>('all');
@@ -16,6 +19,11 @@ export function ExplorePage() {
   const [maxBudget, setMaxBudget] = useState(1500);
   const [origin, setOrigin] = useState('ORD – Chicago');
   const [selectedDestIata, setSelectedDestIata] = useState<string | null>(null);
+  const [panelHeight, setPanelHeight] = useState(DEFAULT_PANEL_HEIGHT);
+  const [collapsed, setCollapsed] = useState(false);
+
+  const splitRef = useRef<HTMLDivElement>(null);
+  const prevHeightRef = useRef(DEFAULT_PANEL_HEIGHT);
 
   const filtered = useMemo(() => {
     let dests = MOCK_DESTINATIONS.filter((d) => d.iataCode !== 'ORD' && d.price <= maxBudget);
@@ -35,13 +43,53 @@ export function ExplorePage() {
     : null;
 
   const handleMarkerClick = (eventId: string) => {
-    // Find destination for this event and select it in the panel
     const dest = filtered.find((d) => d.events.some((e) => e.id === eventId));
-    if (dest) setSelectedDestIata(dest.iataCode);
+    if (dest) {
+      setSelectedDestIata(dest.iataCode);
+      // Expand panel if collapsed
+      if (collapsed) {
+        setCollapsed(false);
+        setPanelHeight(prevHeightRef.current);
+      }
+    }
   };
 
   const handleEventClick = (eventId: string) => navigate(`/itinerary/${eventId}`);
   const handleDestSelect = (iata: string | null) => setSelectedDestIata(iata);
+
+  const handleResizeStart = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    const startY = e.clientY;
+    const startH = panelHeight;
+
+    const onMouseMove = (e: MouseEvent) => {
+      const splitH = splitRef.current?.clientHeight ?? 600;
+      const maxH = splitH - 150;
+      const delta = startY - e.clientY;
+      const newH = Math.max(MIN_PANEL_HEIGHT, Math.min(maxH, startH + delta));
+      setPanelHeight(newH);
+      if (newH > MIN_PANEL_HEIGHT + 10) setCollapsed(false);
+    };
+
+    const onMouseUp = () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+  }, [panelHeight]);
+
+  const toggleCollapse = () => {
+    if (collapsed) {
+      setCollapsed(false);
+      setPanelHeight(prevHeightRef.current);
+    } else {
+      prevHeightRef.current = panelHeight;
+      setCollapsed(true);
+      setPanelHeight(MIN_PANEL_HEIGHT);
+    }
+  };
 
   return (
     <div className={styles.page}>
@@ -65,17 +113,34 @@ export function ExplorePage() {
         sports={['all', ...SPORTS]}
       />
 
-      <div className={styles.splitLayout}>
-        {/* Top: Map */}
+      <div className={styles.splitLayout} ref={splitRef}>
+        {/* Map fills remaining space above panel */}
         <div className={styles.mapPane}>
           <ExploreMap
             destinations={filtered}
             onEventClick={handleMarkerClick}
+            selectedDest={selectedDest}
+            origin={origin}
           />
         </div>
 
-        {/* Bottom: Info panel */}
-        <div className={styles.panelPane}>
+        {/* Drag handle */}
+        <div
+          className={styles.resizeHandle}
+          onMouseDown={handleResizeStart}
+        >
+          <div className={styles.resizeGrip} />
+          <button
+            className={styles.collapseBtn}
+            onClick={toggleCollapse}
+            title={collapsed ? 'Expand panel' : 'Collapse panel'}
+          >
+            {collapsed ? '▲' : '▼'}
+          </button>
+        </div>
+
+        {/* Bottom info panel */}
+        <div className={styles.panelPane} style={{ height: panelHeight }}>
           <ExplorePanel
             destinations={filtered}
             selectedDest={selectedDest}

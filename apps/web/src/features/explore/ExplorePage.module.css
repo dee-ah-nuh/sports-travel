@@ -51,17 +51,67 @@
   min-height: 0;
 }
 
-/* Map fills ~58% of remaining space */
+/* Map fills all space above the panel */
 .mapPane {
-  flex: 0 0 58%;
+  flex: 1;
   position: relative;
   overflow: hidden;
+  min-height: 150px;
 }
 
-/* Panel fills remaining ~42% */
-.panelPane {
-  flex: 1;
-  overflow: hidden;
-  border-top: 1px solid var(--border);
+/* ── Resize handle ──────────────────────────────────────────────────────── */
+.resizeHandle {
+  flex-shrink: 0;
+  height: 20px;
   background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  cursor: ns-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  transition: background 0.15s;
+  user-select: none;
+}
+.resizeHandle:hover {
+  background: var(--bg-card);
+}
+
+.resizeGrip {
+  width: 36px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--border);
+  transition: background 0.15s;
+}
+.resizeHandle:hover .resizeGrip {
+  background: var(--accent);
+}
+
+.collapseBtn {
+  position: absolute;
+  right: 16px;
+  font-size: 10px;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  line-height: 1;
+  transition: color 0.15s, background 0.15s;
+}
+.collapseBtn:hover {
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+/* Panel — height is set inline via JS */
+.panelPane {
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--bg-surface);
+  transition: height 0.05s;
 }
