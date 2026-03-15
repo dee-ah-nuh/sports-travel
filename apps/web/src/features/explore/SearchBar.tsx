@@ -6,7 +6,31 @@ interface Props {
   onOriginChange: (v: string) => void;
 }
 
-const POPULAR_ORIGINS = ['ORD – Chicago', 'JFK – New York', 'LAX – Los Angeles', 'LHR – London', 'CDG – Paris'];
+// Origins that have direct inbound flights in wc2026_flights.json are marked (direct)
+// Others will show connecting flight options
+const POPULAR_ORIGINS = [
+  'ORD – Chicago',       // direct
+  'LHR – London',        // direct
+  'CDG – Paris',         // direct
+  'AMS – Amsterdam',     // direct
+  'MAD – Madrid',        // direct
+  'DEN – Denver',        // direct
+  'DXB – Dubai',         // direct
+  'ICN – Seoul',         // direct
+  'NRT – Tokyo',         // direct
+  'FRA – Frankfurt',     // direct
+  'YUL – Montréal',      // direct
+  'YYC – Calgary',       // direct
+  'GRU – São Paulo',     // direct
+  'BOG – Bogotá',        // direct
+  'SYD – Sydney',        // direct
+  'MSP – Minneapolis',   // direct
+  'DCA – Washington DC', // direct
+  'DFW – Dallas',        // direct (venue, also origin)
+  'JFK – New York',      // connecting
+  'LAX – Los Angeles',   // connecting
+  'MEX – Mexico City',   // connecting
+];
 
 export function SearchBar({ origin, onOriginChange }: Props) {
   return (

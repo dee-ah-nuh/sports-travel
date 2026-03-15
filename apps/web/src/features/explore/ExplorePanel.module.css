@@ -197,3 +197,193 @@
   transition: filter 0.15s;
 }
 .detailCta:hover { filter: brightness(1.3); }
+
+/* ── Loading pill ───────────────────────────────────────────────────────────── */
+.loadingPill {
+  margin-left: 8px;
+  font-size: 11px;
+  color: var(--accent);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 0.5 } 50% { opacity: 1 } }
+
+/* ── Price pending state ─────────────────────────────────────────────────────── */
+.flightPricePending { font-size: 18px; font-weight: 700; color: var(--text-muted); }
+.chipPricePending { font-size: 13px; font-weight: 600; color: var(--text-muted); }
+
+/* ── Stage badge (in event stream) ──────────────────────────────────────────── */
+.stageBadge {
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.connectBadge {
+  background: rgba(80,182,255,0.12);
+  color: #50b6ff;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ── Venue row ───────────────────────────────────────────────────────────────── */
+.venueRow {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 4px 0 8px;
+}
+
+/* ── Tabs ────────────────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 10px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 6px 14px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -1px;
+}
+.tab:hover { color: var(--text-primary); }
+.tabActive {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Detail body (scrollable tab content) ────────────────────────────────────── */
+.detailBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Match event meta ─────────────────────────────────────────────────────────── */
+.detailEventMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+.stagePill {
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ── Flights loading ──────────────────────────────────────────────────────────── */
+.flightsLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+.loadingSpinner {
+  font-size: 28px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
+.loadingHint { font-size: 12px; color: var(--text-muted); }
+
+/* ── Flight date group ────────────────────────────────────────────────────────── */
+.flightDateGroup { display: flex; flex-direction: column; gap: 6px; }
+.flightDateLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 0 2px;
+}
+
+/* ── Flight result card ───────────────────────────────────────────────────────── */
+.flightCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 100%;
+}
+.flightCard:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(80,182,255,0.4);
+  box-shadow: var(--shadow-card);
+}
+.flightCardDirect { border-color: rgba(87,236,178,0.25); }
+.flightCardDirect:hover { border-color: rgba(87,236,178,0.5); }
+
+.flightCardTop { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.flightCardLeft { flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.flightCardRight { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex-shrink: 0; }
+
+.flightBadge { font-size: 11px; font-weight: 600; border-radius: 4px; padding: 2px 7px; align-self: flex-start; }
+.flightRoute { display: flex; align-items: center; gap: 6px; }
+.flightIata { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.flightHub { font-size: 14px; font-weight: 600; color: var(--text-secondary); }
+.flightArrow { font-size: 12px; color: var(--text-muted); }
+.flightMeta { font-size: 12px; color: var(--text-secondary); display: flex; align-items: center; gap: 4px; }
+.flightDot { color: var(--text-muted); }
+
+.flightCardPrice { font-size: 20px; font-weight: 700; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.flightCardExpand { font-size: 10px; color: var(--text-muted); }
+
+/* ── Expanded leg breakdown ───────────────────────────────────────────────────── */
+.flightLegs {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.legRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.legAirline { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; min-width: 48px; }
+.legCode { font-size: 12px; font-weight: 700; color: var(--text-primary); }
+.legNumber { font-size: 11px; color: var(--text-muted); }
+.synthLabel { font-size: 10px; color: var(--text-muted); font-style: italic; }
+
+.legTimes { display: flex; align-items: center; gap: 8px; flex: 1; justify-content: center; }
+.legTime { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.legIata { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+.legHour { font-size: 12px; color: var(--text-secondary); }
+.legDuration { font-size: 11px; color: var(--text-muted); padding: 0 4px; }
+
+.layoverRow {
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  text-align: center;
+}

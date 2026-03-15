@@ -1,0 +1,2193 @@
+{
+  "meta": {
+    "tournament": "FIFA World Cup 2026",
+    "edition": "23rd",
+    "dates": {
+      "start": "2026-06-11",
+      "end": "2026-07-19"
+    },
+    "host_countries": [
+      "USA",
+      "Mexico",
+      "Canada"
+    ],
+    "total_teams": 48,
+    "total_groups": 12,
+    "total_matches": 104,
+    "total_venues": 16,
+    "format_notes": "Top 2 per group + 8 best 3rd-place teams advance to Round of 32. TBD teams (UEFA Playoff A-D, Intercontinental Playoff 1-2) are placeholder names pending final qualification.",
+    "sources": [
+      "FIFA",
+      "MLS Soccer",
+      "NBC Sports",
+      "Wikipedia"
+    ],
+    "generated_date": "2026-03-15"
+  },
+  "groups": {
+    "A": [
+      "Mexico",
+      "South Africa",
+      "South Korea",
+      "UEFA Playoff D Winner"
+    ],
+    "B": [
+      "Canada",
+      "Qatar",
+      "Switzerland",
+      "UEFA Playoff A Winner"
+    ],
+    "C": [
+      "Brazil",
+      "Morocco",
+      "Haiti",
+      "Scotland"
+    ],
+    "D": [
+      "USA",
+      "Paraguay",
+      "Australia",
+      "UEFA Playoff C Winner"
+    ],
+    "E": [
+      "Germany",
+      "Ivory Coast",
+      "Ecuador",
+      "Curaçao"
+    ],
+    "F": [
+      "Netherlands",
+      "Japan",
+      "Tunisia",
+      "UEFA Playoff B Winner"
+    ],
+    "G": [
+      "Belgium",
+      "Iran",
+      "New Zealand",
+      "Egypt"
+    ],
+    "H": [
+      "Spain",
+      "Uruguay",
+      "Saudi Arabia",
+      "Cape Verde"
+    ],
+    "I": [
+      "France",
+      "Senegal",
+      "Norway",
+      "Intercontinental Playoff 2 Winner"
+    ],
+    "J": [
+      "Argentina",
+      "Algeria",
+      "Austria",
+      "Jordan"
+    ],
+    "K": [
+      "Portugal",
+      "Colombia",
+      "Uzbekistan",
+      "Intercontinental Playoff 1 Winner"
+    ],
+    "L": [
+      "England",
+      "Croatia",
+      "Panama",
+      "Ghana"
+    ]
+  },
+  "venues": [
+    {
+      "venue_id": "atlanta",
+      "city": "Atlanta",
+      "state_province": "Georgia",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "Mercedes-Benz Stadium",
+      "fifa_tournament_name": "Atlanta Stadium",
+      "capacity": 71000,
+      "lat": 33.7554,
+      "lng": -84.401,
+      "nearby_airports": [
+        {
+          "iata": "ATL",
+          "distance_mi": 8
+        }
+      ]
+    },
+    {
+      "venue_id": "boston",
+      "city": "Foxborough",
+      "state_province": "Massachusetts",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "Gillette Stadium",
+      "fifa_tournament_name": "Boston Stadium",
+      "capacity": 65878,
+      "lat": 42.091,
+      "lng": -71.2643,
+      "nearby_airports": [
+        {
+          "iata": "BOS",
+          "distance_mi": 25
+        },
+        {
+          "iata": "PVD",
+          "distance_mi": 22
+        },
+        {
+          "iata": "MHT",
+          "distance_mi": 38
+        },
+        {
+          "iata": "ORH",
+          "distance_mi": 42
+        }
+      ]
+    },
+    {
+      "venue_id": "dallas",
+      "city": "Arlington",
+      "state_province": "Texas",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "AT&T Stadium",
+      "fifa_tournament_name": "Dallas Stadium",
+      "capacity": 80000,
+      "lat": 32.748,
+      "lng": -97.0931,
+      "nearby_airports": [
+        {
+          "iata": "DFW",
+          "distance_mi": 18
+        },
+        {
+          "iata": "DAL",
+          "distance_mi": 20
+        },
+        {
+          "iata": "AFW",
+          "distance_mi": 24
+        }
+      ]
+    },
+    {
+      "venue_id": "guadalajara",
+      "city": "Guadalajara",
+      "state_province": "Jalisco",
+      "country": "Mexico",
+      "country_code": "MX",
+      "stadium_name": "Estadio Akron",
+      "fifa_tournament_name": "Estadio Guadalajara",
+      "capacity": 49850,
+      "lat": 20.6866,
+      "lng": -103.4091,
+      "nearby_airports": [
+        {
+          "iata": "GDL",
+          "distance_mi": 15
+        }
+      ]
+    },
+    {
+      "venue_id": "houston",
+      "city": "Houston",
+      "state_province": "Texas",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "NRG Stadium",
+      "fifa_tournament_name": "Houston Stadium",
+      "capacity": 72220,
+      "lat": 29.6847,
+      "lng": -95.4107,
+      "nearby_airports": [
+        {
+          "iata": "IAH",
+          "distance_mi": 22
+        },
+        {
+          "iata": "HOU",
+          "distance_mi": 12
+        }
+      ]
+    },
+    {
+      "venue_id": "kansas_city",
+      "city": "Kansas City",
+      "state_province": "Missouri",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "GEHA Field at Arrowhead Stadium",
+      "fifa_tournament_name": "Kansas City Stadium",
+      "capacity": 76416,
+      "lat": 39.0489,
+      "lng": -94.4839,
+      "nearby_airports": [
+        {
+          "iata": "MCI",
+          "distance_mi": 25
+        }
+      ]
+    },
+    {
+      "venue_id": "los_angeles",
+      "city": "Inglewood",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "SoFi Stadium",
+      "fifa_tournament_name": "Los Angeles Stadium",
+      "capacity": 70240,
+      "lat": 33.9535,
+      "lng": -118.3392,
+      "nearby_airports": [
+        {
+          "iata": "LAX",
+          "distance_mi": 3
+        },
+        {
+          "iata": "BUR",
+          "distance_mi": 25
+        },
+        {
+          "iata": "LGB",
+          "distance_mi": 22
+        },
+        {
+          "iata": "ONT",
+          "distance_mi": 35
+        },
+        {
+          "iata": "SNA",
+          "distance_mi": 42
+        }
+      ]
+    },
+    {
+      "venue_id": "mexico_city",
+      "city": "Mexico City",
+      "state_province": "CDMX",
+      "country": "Mexico",
+      "country_code": "MX",
+      "stadium_name": "Estadio Azteca",
+      "fifa_tournament_name": "Mexico City Stadium",
+      "capacity": 87523,
+      "lat": 19.3029,
+      "lng": -99.1505,
+      "nearby_airports": [
+        {
+          "iata": "MEX",
+          "distance_mi": 8
+        },
+        {
+          "iata": "NLU",
+          "distance_mi": 30
+        },
+        {
+          "iata": "TLC",
+          "distance_mi": 45
+        }
+      ]
+    },
+    {
+      "venue_id": "miami",
+      "city": "Miami Gardens",
+      "state_province": "Florida",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "Hard Rock Stadium",
+      "fifa_tournament_name": "Miami Stadium",
+      "capacity": 65326,
+      "lat": 25.958,
+      "lng": -80.2389,
+      "nearby_airports": [
+        {
+          "iata": "MIA",
+          "distance_mi": 12
+        },
+        {
+          "iata": "FLL",
+          "distance_mi": 16
+        },
+        {
+          "iata": "PBI",
+          "distance_mi": 65
+        }
+      ]
+    },
+    {
+      "venue_id": "monterrey",
+      "city": "Guadalupe",
+      "state_province": "Nuevo León",
+      "country": "Mexico",
+      "country_code": "MX",
+      "stadium_name": "Estadio BBVA",
+      "fifa_tournament_name": "Estadio Monterrey",
+      "capacity": 53500,
+      "lat": 25.6693,
+      "lng": -100.31,
+      "nearby_airports": [
+        {
+          "iata": "MTY",
+          "distance_mi": 12
+        }
+      ]
+    },
+    {
+      "venue_id": "new_york_nj",
+      "city": "East Rutherford",
+      "state_province": "New Jersey",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "MetLife Stadium",
+      "fifa_tournament_name": "New York New Jersey Stadium",
+      "capacity": 82500,
+      "lat": 40.8136,
+      "lng": -74.0742,
+      "nearby_airports": [
+        {
+          "iata": "EWR",
+          "distance_mi": 12
+        },
+        {
+          "iata": "JFK",
+          "distance_mi": 25
+        },
+        {
+          "iata": "LGA",
+          "distance_mi": 22
+        },
+        {
+          "iata": "HPN",
+          "distance_mi": 35
+        },
+        {
+          "iata": "ISP",
+          "distance_mi": 55
+        },
+        {
+          "iata": "SWF",
+          "distance_mi": 60
+        },
+        {
+          "iata": "TTN",
+          "distance_mi": 55
+        },
+        {
+          "iata": "ACY",
+          "distance_mi": 90
+        }
+      ]
+    },
+    {
+      "venue_id": "philadelphia",
+      "city": "Philadelphia",
+      "state_province": "Pennsylvania",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "Lincoln Financial Field",
+      "fifa_tournament_name": "Philadelphia Stadium",
+      "capacity": 69796,
+      "lat": 39.9008,
+      "lng": -75.1674,
+      "nearby_airports": [
+        {
+          "iata": "PHL",
+          "distance_mi": 9
+        },
+        {
+          "iata": "ILG",
+          "distance_mi": 25
+        },
+        {
+          "iata": "TTN",
+          "distance_mi": 35
+        },
+        {
+          "iata": "ABE",
+          "distance_mi": 55
+        },
+        {
+          "iata": "ACY",
+          "distance_mi": 60
+        },
+        {
+          "iata": "BWI",
+          "distance_mi": 95
+        }
+      ]
+    },
+    {
+      "venue_id": "san_francisco",
+      "city": "Santa Clara",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "Levi's Stadium",
+      "fifa_tournament_name": "San Francisco Bay Area Stadium",
+      "capacity": 68500,
+      "lat": 37.4033,
+      "lng": -121.9694,
+      "nearby_airports": [
+        {
+          "iata": "SJC",
+          "distance_mi": 6
+        },
+        {
+          "iata": "SFO",
+          "distance_mi": 30
+        },
+        {
+          "iata": "OAK",
+          "distance_mi": 40
+        },
+        {
+          "iata": "SMF",
+          "distance_mi": 90
+        },
+        {
+          "iata": "STS",
+          "distance_mi": 65
+        },
+        {
+          "iata": "MRY",
+          "distance_mi": 80
+        }
+      ]
+    },
+    {
+      "venue_id": "seattle",
+      "city": "Seattle",
+      "state_province": "Washington",
+      "country": "USA",
+      "country_code": "US",
+      "stadium_name": "Lumen Field",
+      "fifa_tournament_name": "Seattle Stadium",
+      "capacity": 68740,
+      "lat": 47.5952,
+      "lng": -122.3316,
+      "nearby_airports": [
+        {
+          "iata": "SEA",
+          "distance_mi": 14
+        },
+        {
+          "iata": "PAE",
+          "distance_mi": 25
+        },
+        {
+          "iata": "OLM",
+          "distance_mi": 60
+        },
+        {
+          "iata": "BLI",
+          "distance_mi": 85
+        }
+      ]
+    },
+    {
+      "venue_id": "toronto",
+      "city": "Toronto",
+      "state_province": "Ontario",
+      "country": "Canada",
+      "country_code": "CA",
+      "stadium_name": "BMO Field",
+      "fifa_tournament_name": "Toronto Stadium",
+      "capacity": 45500,
+      "lat": 43.6333,
+      "lng": -79.4179,
+      "nearby_airports": [
+        {
+          "iata": "YTZ",
+          "distance_mi": 3
+        },
+        {
+          "iata": "YYZ",
+          "distance_mi": 20
+        },
+        {
+          "iata": "YHM",
+          "distance_mi": 40
+        },
+        {
+          "iata": "BUF",
+          "distance_mi": 62
+        },
+        {
+          "iata": "YKF",
+          "distance_mi": 65
+        }
+      ]
+    },
+    {
+      "venue_id": "vancouver",
+      "city": "Vancouver",
+      "state_province": "British Columbia",
+      "country": "Canada",
+      "country_code": "CA",
+      "stadium_name": "BC Place",
+      "fifa_tournament_name": "BC Place Vancouver",
+      "capacity": 54500,
+      "lat": 49.2768,
+      "lng": -123.1117,
+      "nearby_airports": [
+        {
+          "iata": "YVR",
+          "distance_mi": 9
+        },
+        {
+          "iata": "YXX",
+          "distance_mi": 40
+        },
+        {
+          "iata": "BLI",
+          "distance_mi": 50
+        },
+        {
+          "iata": "YYJ",
+          "distance_mi": 55
+        }
+      ]
+    }
+  ],
+  "airports": [
+    {
+      "iata": "ATL",
+      "name": "Hartsfield-Jackson Atlanta Intl",
+      "city": "Atlanta",
+      "state_province": "Georgia",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 33.6407,
+      "lng": -84.4277,
+      "type": "international"
+    },
+    {
+      "iata": "BOS",
+      "name": "Logan International",
+      "city": "Boston",
+      "state_province": "Massachusetts",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 42.3656,
+      "lng": -71.0096,
+      "type": "international"
+    },
+    {
+      "iata": "PVD",
+      "name": "T.F. Green Airport",
+      "city": "Providence",
+      "state_province": "Rhode Island",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 41.7265,
+      "lng": -71.4282,
+      "type": "international"
+    },
+    {
+      "iata": "MHT",
+      "name": "Manchester-Boston Regional",
+      "city": "Manchester",
+      "state_province": "New Hampshire",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 42.9326,
+      "lng": -71.4354,
+      "type": "regional"
+    },
+    {
+      "iata": "ORH",
+      "name": "Worcester Regional",
+      "city": "Worcester",
+      "state_province": "Massachusetts",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 42.2673,
+      "lng": -71.8757,
+      "type": "regional"
+    },
+    {
+      "iata": "DFW",
+      "name": "Dallas/Fort Worth International",
+      "city": "Dallas–Fort Worth",
+      "state_province": "Texas",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 32.8998,
+      "lng": -97.0403,
+      "type": "international"
+    },
+    {
+      "iata": "DAL",
+      "name": "Dallas Love Field",
+      "city": "Dallas",
+      "state_province": "Texas",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 32.8481,
+      "lng": -96.8512,
+      "type": "domestic"
+    },
+    {
+      "iata": "AFW",
+      "name": "Fort Worth Alliance Airport",
+      "city": "Fort Worth",
+      "state_province": "Texas",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 32.9878,
+      "lng": -97.3188,
+      "type": "regional"
+    },
+    {
+      "iata": "GDL",
+      "name": "Miguel Hidalgo y Costilla International",
+      "city": "Guadalajara",
+      "state_province": "Jalisco",
+      "country": "Mexico",
+      "country_code": "MX",
+      "lat": 20.5218,
+      "lng": -103.3109,
+      "type": "international"
+    },
+    {
+      "iata": "IAH",
+      "name": "George Bush Intercontinental",
+      "city": "Houston",
+      "state_province": "Texas",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 29.9902,
+      "lng": -95.3368,
+      "type": "international"
+    },
+    {
+      "iata": "HOU",
+      "name": "William P. Hobby Airport",
+      "city": "Houston",
+      "state_province": "Texas",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 29.6454,
+      "lng": -95.2789,
+      "type": "domestic"
+    },
+    {
+      "iata": "MCI",
+      "name": "Kansas City International",
+      "city": "Kansas City",
+      "state_province": "Missouri",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 39.2976,
+      "lng": -94.7139,
+      "type": "international"
+    },
+    {
+      "iata": "LAX",
+      "name": "Los Angeles International",
+      "city": "Los Angeles",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 33.9425,
+      "lng": -118.4081,
+      "type": "international"
+    },
+    {
+      "iata": "BUR",
+      "name": "Hollywood Burbank Airport",
+      "city": "Burbank",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 34.2007,
+      "lng": -118.3585,
+      "type": "regional"
+    },
+    {
+      "iata": "LGB",
+      "name": "Long Beach Airport",
+      "city": "Long Beach",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 33.8177,
+      "lng": -118.1516,
+      "type": "regional"
+    },
+    {
+      "iata": "ONT",
+      "name": "Ontario International",
+      "city": "Ontario",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 34.056,
+      "lng": -117.6012,
+      "type": "international"
+    },
+    {
+      "iata": "SNA",
+      "name": "John Wayne / Orange County Airport",
+      "city": "Santa Ana",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 33.6757,
+      "lng": -117.8682,
+      "type": "regional"
+    },
+    {
+      "iata": "MEX",
+      "name": "Benito Juárez International (AICM)",
+      "city": "Mexico City",
+      "state_province": "CDMX",
+      "country": "Mexico",
+      "country_code": "MX",
+      "lat": 19.4363,
+      "lng": -99.0721,
+      "type": "international"
+    },
+    {
+      "iata": "NLU",
+      "name": "Felipe Ángeles International (NAICM)",
+      "city": "Zumpango",
+      "state_province": "State of Mexico",
+      "country": "Mexico",
+      "country_code": "MX",
+      "lat": 19.7458,
+      "lng": -99.0146,
+      "type": "international"
+    },
+    {
+      "iata": "TLC",
+      "name": "Lic. Adolfo López Mateos International (Toluca)",
+      "city": "Toluca",
+      "state_province": "State of Mexico",
+      "country": "Mexico",
+      "country_code": "MX",
+      "lat": 19.3371,
+      "lng": -99.566,
+      "type": "regional"
+    },
+    {
+      "iata": "MIA",
+      "name": "Miami International",
+      "city": "Miami",
+      "state_province": "Florida",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 25.7959,
+      "lng": -80.287,
+      "type": "international"
+    },
+    {
+      "iata": "FLL",
+      "name": "Fort Lauderdale-Hollywood International",
+      "city": "Fort Lauderdale",
+      "state_province": "Florida",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 26.0726,
+      "lng": -80.1527,
+      "type": "international"
+    },
+    {
+      "iata": "PBI",
+      "name": "Palm Beach International",
+      "city": "West Palm Beach",
+      "state_province": "Florida",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 26.6832,
+      "lng": -80.0956,
+      "type": "regional"
+    },
+    {
+      "iata": "MTY",
+      "name": "General Mariano Escobedo International",
+      "city": "Monterrey",
+      "state_province": "Nuevo León",
+      "country": "Mexico",
+      "country_code": "MX",
+      "lat": 25.7785,
+      "lng": -100.1067,
+      "type": "international"
+    },
+    {
+      "iata": "EWR",
+      "name": "Newark Liberty International",
+      "city": "Newark",
+      "state_province": "New Jersey",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 40.6895,
+      "lng": -74.1745,
+      "type": "international"
+    },
+    {
+      "iata": "JFK",
+      "name": "John F. Kennedy International",
+      "city": "New York",
+      "state_province": "New York",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 40.6413,
+      "lng": -73.7781,
+      "type": "international"
+    },
+    {
+      "iata": "LGA",
+      "name": "LaGuardia Airport",
+      "city": "New York",
+      "state_province": "New York",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 40.7772,
+      "lng": -73.8726,
+      "type": "domestic"
+    },
+    {
+      "iata": "HPN",
+      "name": "Westchester County Airport",
+      "city": "White Plains",
+      "state_province": "New York",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 41.067,
+      "lng": -73.7076,
+      "type": "regional"
+    },
+    {
+      "iata": "ISP",
+      "name": "Long Island MacArthur Airport",
+      "city": "Islip",
+      "state_province": "New York",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 40.7952,
+      "lng": -73.1002,
+      "type": "regional"
+    },
+    {
+      "iata": "SWF",
+      "name": "New York Stewart International",
+      "city": "Newburgh",
+      "state_province": "New York",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 41.5041,
+      "lng": -74.1048,
+      "type": "regional"
+    },
+    {
+      "iata": "TTN",
+      "name": "Trenton-Mercer Airport",
+      "city": "Trenton",
+      "state_province": "New Jersey",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 40.2767,
+      "lng": -74.8135,
+      "type": "regional"
+    },
+    {
+      "iata": "ACY",
+      "name": "Atlantic City International",
+      "city": "Atlantic City",
+      "state_province": "New Jersey",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 39.4576,
+      "lng": -74.5773,
+      "type": "regional"
+    },
+    {
+      "iata": "PHL",
+      "name": "Philadelphia International",
+      "city": "Philadelphia",
+      "state_province": "Pennsylvania",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 39.8729,
+      "lng": -75.2407,
+      "type": "international"
+    },
+    {
+      "iata": "ILG",
+      "name": "Wilmington Airport",
+      "city": "Wilmington",
+      "state_province": "Delaware",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 39.6787,
+      "lng": -75.6065,
+      "type": "regional"
+    },
+    {
+      "iata": "ABE",
+      "name": "Lehigh Valley International",
+      "city": "Allentown",
+      "state_province": "Pennsylvania",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 40.6521,
+      "lng": -75.4408,
+      "type": "regional"
+    },
+    {
+      "iata": "BWI",
+      "name": "Baltimore/Washington International Thurgood Marshall",
+      "city": "Baltimore",
+      "state_province": "Maryland",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 39.1774,
+      "lng": -76.6684,
+      "type": "international"
+    },
+    {
+      "iata": "SJC",
+      "name": "Norman Y. Mineta San José International",
+      "city": "San Jose",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 37.3626,
+      "lng": -121.929,
+      "type": "international"
+    },
+    {
+      "iata": "SFO",
+      "name": "San Francisco International",
+      "city": "San Francisco",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 37.6213,
+      "lng": -122.379,
+      "type": "international"
+    },
+    {
+      "iata": "OAK",
+      "name": "Oakland International",
+      "city": "Oakland",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 37.7213,
+      "lng": -122.2208,
+      "type": "international"
+    },
+    {
+      "iata": "SMF",
+      "name": "Sacramento International",
+      "city": "Sacramento",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 38.6954,
+      "lng": -121.5908,
+      "type": "international"
+    },
+    {
+      "iata": "STS",
+      "name": "Charles M. Schulz–Sonoma County Airport",
+      "city": "Santa Rosa",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 38.509,
+      "lng": -122.8128,
+      "type": "regional"
+    },
+    {
+      "iata": "MRY",
+      "name": "Monterey Regional Airport",
+      "city": "Monterey",
+      "state_province": "California",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 36.587,
+      "lng": -121.843,
+      "type": "regional"
+    },
+    {
+      "iata": "SEA",
+      "name": "Seattle-Tacoma International",
+      "city": "Seattle",
+      "state_province": "Washington",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 47.4502,
+      "lng": -122.3088,
+      "type": "international"
+    },
+    {
+      "iata": "PAE",
+      "name": "Paine Field / Snohomish County Airport",
+      "city": "Everett",
+      "state_province": "Washington",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 47.9063,
+      "lng": -122.2815,
+      "type": "regional"
+    },
+    {
+      "iata": "BLI",
+      "name": "Bellingham International",
+      "city": "Bellingham",
+      "state_province": "Washington",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 48.7928,
+      "lng": -122.5375,
+      "type": "regional"
+    },
+    {
+      "iata": "OLM",
+      "name": "Olympia Regional Airport",
+      "city": "Olympia",
+      "state_province": "Washington",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 46.9694,
+      "lng": -122.9019,
+      "type": "regional"
+    },
+    {
+      "iata": "YYZ",
+      "name": "Toronto Pearson International",
+      "city": "Toronto",
+      "state_province": "Ontario",
+      "country": "Canada",
+      "country_code": "CA",
+      "lat": 43.6777,
+      "lng": -79.6248,
+      "type": "international"
+    },
+    {
+      "iata": "YTZ",
+      "name": "Billy Bishop Toronto City Airport",
+      "city": "Toronto",
+      "state_province": "Ontario",
+      "country": "Canada",
+      "country_code": "CA",
+      "lat": 43.6272,
+      "lng": -79.396,
+      "type": "regional"
+    },
+    {
+      "iata": "YHM",
+      "name": "John C. Munro Hamilton International",
+      "city": "Hamilton",
+      "state_province": "Ontario",
+      "country": "Canada",
+      "country_code": "CA",
+      "lat": 43.1736,
+      "lng": -79.935,
+      "type": "regional"
+    },
+    {
+      "iata": "YKF",
+      "name": "Region of Waterloo International",
+      "city": "Waterloo",
+      "state_province": "Ontario",
+      "country": "Canada",
+      "country_code": "CA",
+      "lat": 43.4608,
+      "lng": -80.3786,
+      "type": "regional"
+    },
+    {
+      "iata": "BUF",
+      "name": "Buffalo Niagara International",
+      "city": "Buffalo",
+      "state_province": "New York",
+      "country": "USA",
+      "country_code": "US",
+      "lat": 42.9405,
+      "lng": -78.7322,
+      "type": "international"
+    },
+    {
+      "iata": "YVR",
+      "name": "Vancouver International",
+      "city": "Vancouver",
+      "state_province": "British Columbia",
+      "country": "Canada",
+      "country_code": "CA",
+      "lat": 49.1947,
+      "lng": -123.1792,
+      "type": "international"
+    },
+    {
+      "iata": "YXX",
+      "name": "Abbotsford International",
+      "city": "Abbotsford",
+      "state_province": "British Columbia",
+      "country": "Canada",
+      "country_code": "CA",
+      "lat": 49.0253,
+      "lng": -122.361,
+      "type": "regional"
+    },
+    {
+      "iata": "YYJ",
+      "name": "Victoria International",
+      "city": "Victoria",
+      "state_province": "British Columbia",
+      "country": "Canada",
+      "country_code": "CA",
+      "lat": 48.6469,
+      "lng": -123.426,
+      "type": "regional"
+    }
+  ],
+  "matches": [
+    {
+      "match_id": "M001",
+      "date": "2026-06-11",
+      "kickoff_et": "15:00",
+      "stage": "Group Stage",
+      "group": "A",
+      "team1": "Mexico",
+      "team2": "South Africa",
+      "venue_id": "mexico_city"
+    },
+    {
+      "match_id": "M002",
+      "date": "2026-06-11",
+      "kickoff_et": "22:00",
+      "stage": "Group Stage",
+      "group": "A",
+      "team1": "South Korea",
+      "team2": "UEFA Playoff D Winner",
+      "venue_id": "guadalajara"
+    },
+    {
+      "match_id": "M003",
+      "date": "2026-06-12",
+      "kickoff_et": "15:00",
+      "stage": "Group Stage",
+      "group": "B",
+      "team1": "Canada",
+      "team2": "UEFA Playoff A Winner",
+      "venue_id": "toronto"
+    },
+    {
+      "match_id": "M004",
+      "date": "2026-06-12",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "D",
+      "team1": "USA",
+      "team2": "Paraguay",
+      "venue_id": "los_angeles"
+    },
+    {
+      "match_id": "M005",
+      "date": "2026-06-13",
+      "kickoff_et": "15:00",
+      "stage": "Group Stage",
+      "group": "B",
+      "team1": "Qatar",
+      "team2": "Switzerland",
+      "venue_id": "san_francisco"
+    },
+    {
+      "match_id": "M006",
+      "date": "2026-06-13",
+      "kickoff_et": "18:00",
+      "stage": "Group Stage",
+      "group": "C",
+      "team1": "Brazil",
+      "team2": "Morocco",
+      "venue_id": "new_york_nj"
+    },
+    {
+      "match_id": "M007",
+      "date": "2026-06-13",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "C",
+      "team1": "Haiti",
+      "team2": "Scotland",
+      "venue_id": "boston"
+    },
+    {
+      "match_id": "M008",
+      "date": "2026-06-13",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "D",
+      "team1": "Australia",
+      "team2": "UEFA Playoff C Winner",
+      "venue_id": "vancouver"
+    },
+    {
+      "match_id": "M009",
+      "date": "2026-06-14",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "F",
+      "team1": "Netherlands",
+      "team2": "Japan",
+      "venue_id": "dallas"
+    },
+    {
+      "match_id": "M010",
+      "date": "2026-06-14",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "E",
+      "team1": "Germany",
+      "team2": "Curaçao",
+      "venue_id": "houston"
+    },
+    {
+      "match_id": "M011",
+      "date": "2026-06-14",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "F",
+      "team1": "UEFA Playoff B Winner",
+      "team2": "Tunisia",
+      "venue_id": "monterrey"
+    },
+    {
+      "match_id": "M012",
+      "date": "2026-06-14",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "E",
+      "team1": "Ivory Coast",
+      "team2": "Ecuador",
+      "venue_id": "philadelphia"
+    },
+    {
+      "match_id": "M013",
+      "date": "2026-06-15",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "H",
+      "team1": "Spain",
+      "team2": "Cape Verde",
+      "venue_id": "atlanta"
+    },
+    {
+      "match_id": "M014",
+      "date": "2026-06-15",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "G",
+      "team1": "Iran",
+      "team2": "New Zealand",
+      "venue_id": "los_angeles"
+    },
+    {
+      "match_id": "M015",
+      "date": "2026-06-15",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "H",
+      "team1": "Saudi Arabia",
+      "team2": "Uruguay",
+      "venue_id": "miami"
+    },
+    {
+      "match_id": "M016",
+      "date": "2026-06-15",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "G",
+      "team1": "Belgium",
+      "team2": "Egypt",
+      "venue_id": "seattle"
+    },
+    {
+      "match_id": "M017",
+      "date": "2026-06-16",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "J",
+      "team1": "Argentina",
+      "team2": "Algeria",
+      "venue_id": "kansas_city"
+    },
+    {
+      "match_id": "M018",
+      "date": "2026-06-16",
+      "kickoff_et": "15:00",
+      "stage": "Group Stage",
+      "group": "I",
+      "team1": "France",
+      "team2": "Senegal",
+      "venue_id": "new_york_nj"
+    },
+    {
+      "match_id": "M019",
+      "date": "2026-06-16",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "J",
+      "team1": "Austria",
+      "team2": "Jordan",
+      "venue_id": "san_francisco"
+    },
+    {
+      "match_id": "M020",
+      "date": "2026-06-16",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "I",
+      "team1": "Intercontinental Playoff 2 Winner",
+      "team2": "Norway",
+      "venue_id": "boston"
+    },
+    {
+      "match_id": "M021",
+      "date": "2026-06-17",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "L",
+      "team1": "England",
+      "team2": "Croatia",
+      "venue_id": "dallas"
+    },
+    {
+      "match_id": "M022",
+      "date": "2026-06-17",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "K",
+      "team1": "Portugal",
+      "team2": "Intercontinental Playoff 1 Winner",
+      "venue_id": "houston"
+    },
+    {
+      "match_id": "M023",
+      "date": "2026-06-17",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "K",
+      "team1": "Uzbekistan",
+      "team2": "Colombia",
+      "venue_id": "mexico_city"
+    },
+    {
+      "match_id": "M024",
+      "date": "2026-06-17",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "L",
+      "team1": "Ghana",
+      "team2": "Panama",
+      "venue_id": "toronto"
+    },
+    {
+      "match_id": "M025",
+      "date": "2026-06-18",
+      "kickoff_et": "12:00",
+      "stage": "Group Stage",
+      "group": "A",
+      "team1": "UEFA Playoff D Winner",
+      "team2": "South Africa",
+      "venue_id": "atlanta"
+    },
+    {
+      "match_id": "M026",
+      "date": "2026-06-18",
+      "kickoff_et": "21:00",
+      "stage": "Group Stage",
+      "group": "A",
+      "team1": "Mexico",
+      "team2": "South Korea",
+      "venue_id": "guadalajara"
+    },
+    {
+      "match_id": "M027",
+      "date": "2026-06-18",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "B",
+      "team1": "Canada",
+      "team2": "Qatar",
+      "venue_id": "vancouver"
+    },
+    {
+      "match_id": "M028",
+      "date": "2026-06-18",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "B",
+      "team1": "Switzerland",
+      "team2": "UEFA Playoff A Winner",
+      "venue_id": "los_angeles"
+    },
+    {
+      "match_id": "M029",
+      "date": "2026-06-19",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "C",
+      "team1": "Scotland",
+      "team2": "Morocco",
+      "venue_id": "boston"
+    },
+    {
+      "match_id": "M030",
+      "date": "2026-06-19",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "C",
+      "team1": "Brazil",
+      "team2": "Haiti",
+      "venue_id": "philadelphia"
+    },
+    {
+      "match_id": "M031",
+      "date": "2026-06-19",
+      "kickoff_et": "15:00",
+      "stage": "Group Stage",
+      "group": "D",
+      "team1": "USA",
+      "team2": "Australia",
+      "venue_id": "seattle"
+    },
+    {
+      "match_id": "M032",
+      "date": "2026-06-19",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "D",
+      "team1": "UEFA Playoff C Winner",
+      "team2": "Paraguay",
+      "venue_id": "san_francisco"
+    },
+    {
+      "match_id": "M033",
+      "date": "2026-06-20",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "F",
+      "team1": "Netherlands",
+      "team2": "UEFA Playoff B Winner",
+      "venue_id": "houston"
+    },
+    {
+      "match_id": "M034",
+      "date": "2026-06-20",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "E",
+      "team1": "Ecuador",
+      "team2": "Curaçao",
+      "venue_id": "kansas_city"
+    },
+    {
+      "match_id": "M035",
+      "date": "2026-06-20",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "E",
+      "team1": "Germany",
+      "team2": "Ivory Coast",
+      "venue_id": "toronto"
+    },
+    {
+      "match_id": "M036",
+      "date": "2026-06-20",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "F",
+      "team1": "Tunisia",
+      "team2": "Japan",
+      "venue_id": "monterrey"
+    },
+    {
+      "match_id": "M037",
+      "date": "2026-06-21",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "H",
+      "team1": "Spain",
+      "team2": "Saudi Arabia",
+      "venue_id": "atlanta"
+    },
+    {
+      "match_id": "M038",
+      "date": "2026-06-21",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "G",
+      "team1": "Belgium",
+      "team2": "Iran",
+      "venue_id": "los_angeles"
+    },
+    {
+      "match_id": "M039",
+      "date": "2026-06-21",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "H",
+      "team1": "Uruguay",
+      "team2": "Cape Verde",
+      "venue_id": "miami"
+    },
+    {
+      "match_id": "M040",
+      "date": "2026-06-21",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "G",
+      "team1": "New Zealand",
+      "team2": "Egypt",
+      "venue_id": "vancouver"
+    },
+    {
+      "match_id": "M041",
+      "date": "2026-06-22",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "I",
+      "team1": "Norway",
+      "team2": "Senegal",
+      "venue_id": "new_york_nj"
+    },
+    {
+      "match_id": "M042",
+      "date": "2026-06-22",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "J",
+      "team1": "Jordan",
+      "team2": "Algeria",
+      "venue_id": "san_francisco"
+    },
+    {
+      "match_id": "M043",
+      "date": "2026-06-22",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "J",
+      "team1": "Argentina",
+      "team2": "Austria",
+      "venue_id": "dallas"
+    },
+    {
+      "match_id": "M044",
+      "date": "2026-06-22",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "I",
+      "team1": "France",
+      "team2": "Intercontinental Playoff 2 Winner",
+      "venue_id": "philadelphia"
+    },
+    {
+      "match_id": "M045",
+      "date": "2026-06-23",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "L",
+      "team1": "England",
+      "team2": "Ghana",
+      "venue_id": "boston"
+    },
+    {
+      "match_id": "M046",
+      "date": "2026-06-23",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "K",
+      "team1": "Colombia",
+      "team2": "Intercontinental Playoff 1 Winner",
+      "venue_id": "guadalajara"
+    },
+    {
+      "match_id": "M047",
+      "date": "2026-06-23",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "K",
+      "team1": "Portugal",
+      "team2": "Uzbekistan",
+      "venue_id": "houston"
+    },
+    {
+      "match_id": "M048",
+      "date": "2026-06-23",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "L",
+      "team1": "Panama",
+      "team2": "Croatia",
+      "venue_id": "toronto"
+    },
+    {
+      "match_id": "M049",
+      "date": "2026-06-24",
+      "kickoff_et": "21:00",
+      "stage": "Group Stage",
+      "group": "A",
+      "team1": "UEFA Playoff D Winner",
+      "team2": "Mexico",
+      "venue_id": "mexico_city"
+    },
+    {
+      "match_id": "M050",
+      "date": "2026-06-24",
+      "kickoff_et": "21:00",
+      "stage": "Group Stage",
+      "group": "A",
+      "team1": "South Africa",
+      "team2": "South Korea",
+      "venue_id": "monterrey"
+    },
+    {
+      "match_id": "M051",
+      "date": "2026-06-24",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "C",
+      "team1": "Morocco",
+      "team2": "Haiti",
+      "venue_id": "atlanta"
+    },
+    {
+      "match_id": "M052",
+      "date": "2026-06-24",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "C",
+      "team1": "Scotland",
+      "team2": "Brazil",
+      "venue_id": "miami"
+    },
+    {
+      "match_id": "M053",
+      "date": "2026-06-24",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "B",
+      "team1": "Switzerland",
+      "team2": "Canada",
+      "venue_id": "vancouver"
+    },
+    {
+      "match_id": "M054",
+      "date": "2026-06-24",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "B",
+      "team1": "UEFA Playoff A Winner",
+      "team2": "Qatar",
+      "venue_id": "seattle"
+    },
+    {
+      "match_id": "M055",
+      "date": "2026-06-25",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "F",
+      "team1": "Japan",
+      "team2": "UEFA Playoff B Winner",
+      "venue_id": "dallas"
+    },
+    {
+      "match_id": "M056",
+      "date": "2026-06-25",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "F",
+      "team1": "Tunisia",
+      "team2": "Netherlands",
+      "venue_id": "kansas_city"
+    },
+    {
+      "match_id": "M057",
+      "date": "2026-06-25",
+      "kickoff_et": "16:00",
+      "stage": "Group Stage",
+      "group": "E",
+      "team1": "Ecuador",
+      "team2": "Germany",
+      "venue_id": "new_york_nj"
+    },
+    {
+      "match_id": "M058",
+      "date": "2026-06-25",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "E",
+      "team1": "Curaçao",
+      "team2": "Ivory Coast",
+      "venue_id": "philadelphia"
+    },
+    {
+      "match_id": "M059",
+      "date": "2026-06-25",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "D",
+      "team1": "UEFA Playoff C Winner",
+      "team2": "USA",
+      "venue_id": "los_angeles"
+    },
+    {
+      "match_id": "M060",
+      "date": "2026-06-25",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "D",
+      "team1": "Paraguay",
+      "team2": "Australia",
+      "venue_id": "san_francisco"
+    },
+    {
+      "match_id": "M061",
+      "date": "2026-06-26",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "I",
+      "team1": "Norway",
+      "team2": "France",
+      "venue_id": "boston"
+    },
+    {
+      "match_id": "M062",
+      "date": "2026-06-26",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "I",
+      "team1": "Senegal",
+      "team2": "Intercontinental Playoff 2 Winner",
+      "venue_id": "toronto"
+    },
+    {
+      "match_id": "M063",
+      "date": "2026-06-26",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "H",
+      "team1": "Uruguay",
+      "team2": "Spain",
+      "venue_id": "guadalajara"
+    },
+    {
+      "match_id": "M064",
+      "date": "2026-06-26",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "H",
+      "team1": "Cape Verde",
+      "team2": "Saudi Arabia",
+      "venue_id": "houston"
+    },
+    {
+      "match_id": "M065",
+      "date": "2026-06-26",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "G",
+      "team1": "New Zealand",
+      "team2": "Belgium",
+      "venue_id": "vancouver"
+    },
+    {
+      "match_id": "M066",
+      "date": "2026-06-26",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "G",
+      "team1": "Egypt",
+      "team2": "Iran",
+      "venue_id": "seattle"
+    },
+    {
+      "match_id": "M067",
+      "date": "2026-06-27",
+      "kickoff_et": "17:00",
+      "stage": "Group Stage",
+      "group": "L",
+      "team1": "Panama",
+      "team2": "England",
+      "venue_id": "new_york_nj"
+    },
+    {
+      "match_id": "M068",
+      "date": "2026-06-27",
+      "kickoff_et": "17:00",
+      "stage": "Group Stage",
+      "group": "L",
+      "team1": "Croatia",
+      "team2": "Ghana",
+      "venue_id": "philadelphia"
+    },
+    {
+      "match_id": "M069",
+      "date": "2026-06-27",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "K",
+      "team1": "Colombia",
+      "team2": "Portugal",
+      "venue_id": "miami"
+    },
+    {
+      "match_id": "M070",
+      "date": "2026-06-27",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "K",
+      "team1": "Intercontinental Playoff 1 Winner",
+      "team2": "Uzbekistan",
+      "venue_id": "atlanta"
+    },
+    {
+      "match_id": "M071",
+      "date": "2026-06-27",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "J",
+      "team1": "Algeria",
+      "team2": "Austria",
+      "venue_id": "kansas_city"
+    },
+    {
+      "match_id": "M072",
+      "date": "2026-06-27",
+      "kickoff_et": null,
+      "stage": "Group Stage",
+      "group": "J",
+      "team1": "Jordan",
+      "team2": "Argentina",
+      "venue_id": "dallas"
+    },
+    {
+      "match_id": "M073",
+      "date": "2026-06-28",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group A Runner-Up",
+      "team2": "Group B Runner-Up",
+      "venue_id": "los_angeles"
+    },
+    {
+      "match_id": "M074",
+      "date": "2026-06-29",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group E Winner",
+      "team2": "Best 3rd (A/B/C/D/F)",
+      "venue_id": "boston"
+    },
+    {
+      "match_id": "M075",
+      "date": "2026-06-29",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group F Winner",
+      "team2": "Group C Runner-Up",
+      "venue_id": "monterrey"
+    },
+    {
+      "match_id": "M076",
+      "date": "2026-06-29",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group C Winner",
+      "team2": "Group F Runner-Up",
+      "venue_id": "houston"
+    },
+    {
+      "match_id": "M077",
+      "date": "2026-06-30",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group I Winner",
+      "team2": "Best 3rd (C/D/F/G/H)",
+      "venue_id": "new_york_nj"
+    },
+    {
+      "match_id": "M078",
+      "date": "2026-06-30",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group E Runner-Up",
+      "team2": "Group I Runner-Up",
+      "venue_id": "dallas"
+    },
+    {
+      "match_id": "M079",
+      "date": "2026-06-30",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group A Winner",
+      "team2": "Best 3rd (C/E/F/H/I)",
+      "venue_id": "mexico_city"
+    },
+    {
+      "match_id": "M080",
+      "date": "2026-07-01",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group L Winner",
+      "team2": "Best 3rd (E/H/I/J/K)",
+      "venue_id": "atlanta"
+    },
+    {
+      "match_id": "M081",
+      "date": "2026-07-01",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group D Winner",
+      "team2": "Best 3rd (B/E/F/I/J)",
+      "venue_id": "san_francisco"
+    },
+    {
+      "match_id": "M082",
+      "date": "2026-07-01",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group G Winner",
+      "team2": "Best 3rd (A/E/H/I/J)",
+      "venue_id": "seattle"
+    },
+    {
+      "match_id": "M083",
+      "date": "2026-07-02",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group H Winner",
+      "team2": "Group J Runner-Up",
+      "venue_id": "los_angeles"
+    },
+    {
+      "match_id": "M084",
+      "date": "2026-07-02",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group B Winner",
+      "team2": "Best 3rd (E/F/G/I/J)",
+      "venue_id": "vancouver"
+    },
+    {
+      "match_id": "M085",
+      "date": "2026-07-02",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group K Runner-Up",
+      "team2": "Group L Runner-Up",
+      "venue_id": "toronto"
+    },
+    {
+      "match_id": "M086",
+      "date": "2026-07-03",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group J Winner",
+      "team2": "Group H Runner-Up",
+      "venue_id": "miami"
+    },
+    {
+      "match_id": "M087",
+      "date": "2026-07-03",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group D Runner-Up",
+      "team2": "Group G Runner-Up",
+      "venue_id": "dallas"
+    },
+    {
+      "match_id": "M088",
+      "date": "2026-07-03",
+      "kickoff_et": null,
+      "stage": "Round of 32",
+      "group": null,
+      "team1": "Group K Winner",
+      "team2": "Best 3rd (D/E/I/J/L)",
+      "venue_id": "kansas_city"
+    },
+    {
+      "match_id": "M089",
+      "date": "2026-07-04",
+      "kickoff_et": null,
+      "stage": "Round of 16",
+      "group": null,
+      "team1": "Winner M073",
+      "team2": "Winner M075",
+      "venue_id": "houston"
+    },
+    {
+      "match_id": "M090",
+      "date": "2026-07-04",
+      "kickoff_et": null,
+      "stage": "Round of 16",
+      "group": null,
+      "team1": "Winner M074",
+      "team2": "Winner M077",
+      "venue_id": "philadelphia"
+    },
+    {
+      "match_id": "M091",
+      "date": "2026-07-05",
+      "kickoff_et": "16:00",
+      "stage": "Round of 16",
+      "group": null,
+      "team1": "Winner M076",
+      "team2": "Winner M078",
+      "venue_id": "new_york_nj"
+    },
+    {
+      "match_id": "M092",
+      "date": "2026-07-05",
+      "kickoff_et": "20:00",
+      "stage": "Round of 16",
+      "group": null,
+      "team1": "Winner M079",
+      "team2": "Winner M080",
+      "venue_id": "mexico_city"
+    },
+    {
+      "match_id": "M093",
+      "date": "2026-07-06",
+      "kickoff_et": "15:00",
+      "stage": "Round of 16",
+      "group": null,
+      "team1": "Winner M083",
+      "team2": "Winner M084",
+      "venue_id": "dallas"
+    },
+    {
+      "match_id": "M094",
+      "date": "2026-07-06",
+      "kickoff_et": "20:00",
+      "stage": "Round of 16",
+      "group": null,
+      "team1": "Winner M081",
+      "team2": "Winner M082",
+      "venue_id": "seattle"
+    },
+    {
+      "match_id": "M095",
+      "date": "2026-07-07",
+      "kickoff_et": "12:00",
+      "stage": "Round of 16",
+      "group": null,
+      "team1": "Winner M086",
+      "team2": "Winner M088",
+      "venue_id": "atlanta"
+    },
+    {
+      "match_id": "M096",
+      "date": "2026-07-07",
+      "kickoff_et": "16:00",
+      "stage": "Round of 16",
+      "group": null,
+      "team1": "Winner M085",
+      "team2": "Winner M087",
+      "venue_id": "vancouver"
+    },
+    {
+      "match_id": "M097",
+      "date": "2026-07-09",
+      "kickoff_et": "16:00",
+      "stage": "Quarterfinal",
+      "group": null,
+      "team1": "Winner M089",
+      "team2": "Winner M090",
+      "venue_id": "boston"
+    },
+    {
+      "match_id": "M098",
+      "date": "2026-07-10",
+      "kickoff_et": "15:00",
+      "stage": "Quarterfinal",
+      "group": null,
+      "team1": "Winner M093",
+      "team2": "Winner M094",
+      "venue_id": "los_angeles"
+    },
+    {
+      "match_id": "M099",
+      "date": "2026-07-11",
+      "kickoff_et": "17:00",
+      "stage": "Quarterfinal",
+      "group": null,
+      "team1": "Winner M091",
+      "team2": "Winner M092",
+      "venue_id": "miami"
+    },
+    {
+      "match_id": "M100",
+      "date": "2026-07-11",
+      "kickoff_et": "21:00",
+      "stage": "Quarterfinal",
+      "group": null,
+      "team1": "Winner M095",
+      "team2": "Winner M096",
+      "venue_id": "kansas_city"
+    },
+    {
+      "match_id": "M101",
+      "date": "2026-07-14",
+      "kickoff_et": null,
+      "stage": "Semifinal",
+      "group": null,
+      "team1": "Winner M097",
+      "team2": "Winner M098",
+      "venue_id": "dallas"
+    },
+    {
+      "match_id": "M102",
+      "date": "2026-07-15",
+      "kickoff_et": null,
+      "stage": "Semifinal",
+      "group": null,
+      "team1": "Winner M099",
+      "team2": "Winner M100",
+      "venue_id": "atlanta"
+    },
+    {
+      "match_id": "M103",
+      "date": "2026-07-18",
+      "kickoff_et": null,
+      "stage": "Third Place",
+      "group": null,
+      "team1": "Loser M101",
+      "team2": "Loser M102",
+      "venue_id": "miami"
+    },
+    {
+      "match_id": "M104",
+      "date": "2026-07-19",
+      "kickoff_et": "15:00",
+      "stage": "Final",
+      "group": null,
+      "team1": "Winner M101",
+      "team2": "Winner M102",
+      "venue_id": "new_york_nj"
+    }
+  ]
+}
