@@ -1,5 +1,3 @@
 {
-  "buildCommand": "pnpm --filter @sports-travel/web... build",
-  "outputDirectory": "apps/web/dist",
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
