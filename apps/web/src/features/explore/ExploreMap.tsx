@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { SPORT_COLORS, SPORT_EMOJI } from '../../data/mock.js';
 import styles from './ExploreMap.module.css';
@@ -107,8 +107,8 @@ function MapboxMap({ destinations, onEventClick, selectedDest, origin }: Props) 
     const map = new mapboxgl.Map({
       container: containerRef.current,
       style: 'mapbox://styles/mapbox/dark-v11',
-      center: [10, 30],
-      zoom: 1.8,
+      center: [-87.9073, 41.9742], // Chicago O'Hare
+      zoom: 3.2,
       projection: 'globe' as unknown as mapboxgl.ProjectionSpecification,
     });
 
