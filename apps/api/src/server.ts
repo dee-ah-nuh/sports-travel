@@ -8,11 +8,10 @@ import { registerRoutes } from './routes/index.js';
 export async function buildApp() {
   const app = Fastify({
     logger: {
-      level: config.NODE_ENV === 'production' ? 'info' : 'debug',
-      transport:
-        config.NODE_ENV !== 'production'
-          ? { target: 'pino-pretty', options: { colorize: true } }
-          : undefined,
+      level: config.NODE_ENV === 'production' ? 'info' as const : 'debug' as const,
+      ...(config.NODE_ENV !== 'production' && {
+        transport: { target: 'pino-pretty', options: { colorize: true } },
+      }),
     },
     requestIdHeader: 'x-request-id',
     requestIdLogLabel: 'requestId',
