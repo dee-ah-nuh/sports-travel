@@ -1,10 +1,10 @@
-.mapContainer { height: 100%; min-height: 500px; position: relative; }
+.mapContainer { height: 100%; position: relative; }
 
 /* Real Mapbox canvas */
-.mapCanvas { width: 100%; height: 100%; min-height: 500px; }
+.mapCanvas { width: 100%; height: 100%; }
 .mapPlaceholder {
   height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: radial-gradient(ellipse at center, #1a2040 0%, #0f1117 70%);
+  background: radial-gradient(ellipse at center, #111420 0%, #0a0c12 70%);
   gap: 24px; padding: 40px; position: relative; overflow: hidden;
 }
 .mapBg { font-size: 200px; opacity: 0.05; position: absolute; }
