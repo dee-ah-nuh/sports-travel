@@ -194,7 +194,7 @@ function MapboxMap({ destinations, onEventClick, selectedDest, origin }: Props) 
     }
 
     const originIata = (origin ?? 'ORD – Chicago').split('–')[0].trim();
-    const originCoords = ORIGIN_COORDS[originIata] ?? ORIGIN_COORDS['ORD']!;
+    const originCoords = ORIGIN_COORDS[originIata] ?? { lat: 41.9742, lng: -87.9073 };
 
     const steps = 60;
     const arcCoords: [number, number][] = [];
