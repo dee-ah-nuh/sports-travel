@@ -393,7 +393,7 @@ function FlightsTab({
     const dateFrom = dates[0] ?? '2026-06-11';
     const dateTo = dates[dates.length - 1] ?? '2026-07-19';
 
-    searchFlights(originCode, dest.venueId, dateFrom, dateTo)
+    searchFlights(originCode, dest.venueId, dateFrom, dateTo, dest.iataCode)
       .then((r) => { setResults(r); setLoading(false); })
       .catch(() => { setError(true); setLoading(false); });
   }, [originCode, dest.venueId, dest.events]);

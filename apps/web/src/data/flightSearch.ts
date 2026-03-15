@@ -1,5 +1,10 @@
 import type { WCDestination } from './wc2026.js';
 
+// ── Live API config ───────────────────────────────────────────────────────────
+// Set VITE_FLIGHT_API_URL in .env to point at the Sports Travel flight server.
+// Falls back to mock data if the env var is not set or the server is unreachable.
+const FLIGHT_API_URL = (import.meta.env.VITE_FLIGHT_API_URL as string | undefined) ?? '';
+
 // ── Raw flight type (matches wc2026_flights.json) ─────────────────────────────
 
 export interface RawFlight {
@@ -147,6 +152,71 @@ export function applyFlightPrices(
   });
 }
 
+// ── Live API: normalise fli response into FlightResult[] ─────────────────────
+
+interface LiveLeg {
+  departure_airport: string;
+  arrival_airport: string;
+  departure_time: string;
+  arrival_time: string;
+  duration: number; // minutes
+  airline: string;
+  flight_number: string;
+}
+
+interface LiveFlight {
+  price: number;
+  currency: string;
+  legs: LiveLeg[];
+}
+
+function normalizeLiveFlight(f: LiveFlight, date: string, idx: number): FlightResult {
+  const legs: FlightLeg[] = f.legs.map((l) => ({
+    flightNumber: l.flight_number,
+    airline: l.airline,
+    airlineCode: l.flight_number.replace(/\d/g, '').slice(0, 2),
+    origin: l.departure_airport,
+    destination: l.arrival_airport,
+    date,
+    departureTime: l.departure_time,
+    arrivalTime: l.arrival_time,
+    durationMin: l.duration,
+  }));
+
+  const totalDurationMin = legs.reduce((s, l) => s + l.durationMin, 0);
+  const direct = legs.length === 1;
+  const connectingAirport = !direct ? legs[0]?.destination : undefined;
+
+  const result: FlightResult = {
+    id: `live-${date}-${idx}`,
+    direct,
+    totalDurationMin,
+    price: f.price,
+    legs,
+    date,
+  };
+  if (connectingAirport) result.connectingAirport = connectingAirport;
+  return result;
+}
+
+async function searchFlightsLive(
+  originIata: string,
+  destinationIata: string,
+  date: string,
+): Promise<FlightResult[] | null> {
+  if (!FLIGHT_API_URL) return null;
+  try {
+    const url = `${FLIGHT_API_URL}/flights?origin=${originIata}&destination=${destinationIata}&date=${date}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    if (!res.ok) return null;
+    const data = (await res.json()) as { success: boolean; flights: LiveFlight[] };
+    if (!data.success || !data.flights.length) return null;
+    return data.flights.map((f, i) => normalizeLiveFlight(f, date, i));
+  } catch {
+    return null; // server unreachable — fall through to mock
+  }
+}
+
 // ── Full flight search for a venue (used in the panel detail view) ────────────
 
 export async function searchFlights(
@@ -154,7 +224,25 @@ export async function searchFlights(
   venueId: string,
   dateFrom: string,
   dateTo: string,
+  destinationIata?: string, // primary airport — used for live API lookup
 ): Promise<FlightResult[]> {
+  // ── Try live API first (if VITE_FLIGHT_API_URL is set) ──────────────────
+  if (FLIGHT_API_URL && destinationIata) {
+    const liveResults: FlightResult[] = [];
+    // Search around the dateFrom date (key match day ± 1 day)
+    const dates = generateDateRange(dateFrom, dateTo, 5); // up to 5 representative dates
+    const settled = await Promise.allSettled(
+      dates.map((d) => searchFlightsLive(originIata, destinationIata, d)),
+    );
+    for (const r of settled) {
+      if (r.status === 'fulfilled' && r.value) liveResults.push(...r.value);
+    }
+    if (liveResults.length > 0) {
+      return liveResults.sort((a, b) => a.date.localeCompare(b.date) || a.price - b.price);
+    }
+    // Live API returned nothing — fall through to mock
+  }
+
   const flights = await fetchFlights();
 
   // All inbound flights for this venue in the date window
@@ -243,6 +331,21 @@ export async function searchFlights(
     if (a.date !== b.date) return a.date.localeCompare(b.date);
     return a.price - b.price;
   });
+}
+
+// Pick up to `max` evenly-spaced dates within the window (always includes first)
+function generateDateRange(from: string, to: string, max: number): string[] {
+  const start = new Date(from);
+  const end = new Date(to);
+  const totalDays = Math.round((end.getTime() - start.getTime()) / 86400000);
+  const step = Math.max(1, Math.floor(totalDays / (max - 1)));
+  const dates: string[] = [];
+  for (let i = 0; i <= totalDays && dates.length < max; i += step) {
+    const d = new Date(start);
+    d.setDate(d.getDate() + i);
+    dates.push(d.toISOString().slice(0, 10));
+  }
+  return dates;
 }
 
 function toLeg(f: RawFlight): FlightLeg {
