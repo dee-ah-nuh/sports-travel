@@ -8,6 +8,7 @@
     "scheme": "sportstravel",
     "userInterfaceStyle": "dark",
     "splash": {
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#0f1117"
     },
