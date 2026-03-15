@@ -1,5 +1,5 @@
 {
-  "extends": "@sports-travel/config/tsconfig.base.json",
+  "extends": "../../packages/config/tsconfig.base.json",
   "compilerOptions": {
     "module": "CommonJS",
     "moduleResolution": "node",
